@@ -1,0 +1,11 @@
+# Node modules (if ever used locally)
+node_modules/
+
+# Ignore environment config
+.env
+
+# Mac system files
+.DS_Store
+
+# VS Code config (optional)
+.vscode/

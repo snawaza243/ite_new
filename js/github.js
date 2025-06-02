@@ -2,7 +2,7 @@
 const GITHUB_USERNAME = 'snawaza243';
 const REPO_NAME = 'ite_new'; // Repository where posts.json will be stored
 const FILE_PATH = 'posts.json'; // Path to the file in the repository
-const ACCESS_TOKEN = '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'; // Keep this secure!
+const ACCESS_TOKEN = 'ghp_xxx'; // Keep this secure!
 
 // Base URL for GitHub API
 const GITHUB_API_BASE = 'https://api.github.com';
@@ -45,7 +45,7 @@ async function savePost(newPost) {
         try {
             const currentData = await fetchPosts();
             currentContent = Array.isArray(currentData) ? currentData : [];
-            
+
             // Get SHA of the existing file
             const url = `${GITHUB_API_BASE}/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${FILE_PATH}`;
             const response = await fetch(url, {
@@ -54,7 +54,7 @@ async function savePost(newPost) {
                     'Accept': 'application/vnd.github.v3+json'
                 }
             });
-            
+
             if (response.ok) {
                 const data = await response.json();
                 sha = data.sha;

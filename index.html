@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>My Blog</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="write.html">New Post</a>
+        </nav>
+    </header>
+    <main>
+        <div id="posts-container"></div>
+    </main>
+    <footer>
+        <p>© 2025 My Blog</p>
+    </footer>
+    <script src="js/github.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const posts = await fetchPosts();
+            renderPosts(posts);
+        });
+
+        function renderPosts(posts) {
+            const container = document.getElementById('posts-container');
+            container.innerHTML = '';
+
+            if (posts.length === 0) {
+                container.innerHTML = '<p>No posts yet. <a href="write.html">Write your first post!</a></p>';
+                return;
+            }
+
+            posts.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach(post => {
+                const postElement = document.createElement('article');
+                postElement.className = 'post-preview';
+                postElement.innerHTML = `
+                    <h2><a href="post.html?id=${post.id}">${post.title}</a></h2>
+                    <div class="post-date">${formatDate(post.date)}</div>
+                    <div class="post-excerpt">${post.content.substring(0, 100)}...</div>
+                    <a href="post.html?id=${post.id}" class="read-more">Read more</a>
+                `;
+                container.appendChild(postElement);
+            });
+        }
+
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString(undefined, options);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "post-001",
+    "title": "Getting Started with Static Blogs",
+    "content": "<p>Static blogs are becoming increasingly popular due to their simplicity and performance benefits.</p><p>With a static blog:</p><ul><li>No database required</li><li>Faster loading times</li><li>Easier to maintain</li><li>More secure</li></ul><p>This particular implementation uses GitHub as a backend storage system.</p>",
+    "date": "2025-06-01"
+  },
+  {
+    "id": "post-002",
+    "title": "The Benefits of Vanilla JavaScript",
+    "content": "<p>While frameworks like React and Vue are popular, there are good reasons to use vanilla JavaScript:</p><ol><li><strong>No build step needed</strong> - Just works in the browser</li><li><strong>Smaller bundle size</strong> - No framework overhead</li><li><strong>Long-term maintainability</strong> - No framework version upgrades</li><li><strong>Better fundamentals</strong> - You learn the actual web platform</li></ol><p>For simple projects like this blog, vanilla JS is often the perfect choice.</p>",
+    "date": "2025-06-02"
+  },
+  {
+    "id": "post-003",
+    "title": "How This Blog Works",
+    "content": "<h2>Architecture Overview</h2><p>This blog uses a clever combination of:</p><ul><li>GitHub as a data store (posts.json)</li><li>GitHub REST API for CRUD operations</li><li>Pure frontend code (HTML/CSS/JS)</li></ul><h2>Key Features</h2><p>The system includes:</p><ul><li>Post listing page</li><li>Individual post pages</li><li>Admin interface for writing posts</li><li>Automatic date handling</li></ul><p>All without any backend code or frameworks!</p>",
+    "date": "2025-06-03"
+  }
+]
